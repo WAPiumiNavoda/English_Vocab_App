@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import Login from './App/Screens/Login';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
+import { useFonts } from 'expo-font';
+import { AuthProvider } from './Auth/AuthProvider';
 
-export default function App() {
+export default App = () => {
+
+  const [fontsLoaded] = useFonts({
+    'outfit' : require('./assets/fonts/Outfit-Regular.ttf'),
+    'outfi-bold' : require('./assets/fonts/Outfit-Bold.ttf'),
+    'outfi-bold-extra' : require('./assets/fonts/Outfit-ExtraBold.ttf'),
+    'outfit-medium': require('./assets/fonts/Outfit-Medium.ttf')
+})
+ 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AuthProvider>
+    <View style={styles.container} >
+    <SafeAreaView style={styles.container}>
+          <Login />
+      </SafeAreaView>
+  </View>
+  </AuthProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    backgroundColor: "#fff",
+    marginTop: 50
+  }
+})
