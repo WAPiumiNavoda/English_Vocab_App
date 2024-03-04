@@ -8,7 +8,7 @@ export default function Category() {
   const navigation = useNavigation();
 
   return (
-    <View>
+    <View style={style.top1}>
     <TouchableOpacity onPress={() => navigation.navigate('QuizHome')}>
       <View style={style.graphStyle}>
         <Text style={style.textStyle}>Writing Task</Text>
@@ -47,4 +47,7 @@ const style = StyleSheet.create({
     textAlign: 'center',
     marginTop: 45, // Adjust this value for proper spacing
 },
+top1 : {
+  paddingBottom: 100
+}
 })

@@ -37,11 +37,13 @@ export default function VoiceMainPage({ navigation, route }) {
     setVoiceQuestions(allQuestions);
   };
   
+ 
+
 
   const handleNextPage = (answers) => {
 
     
-    navigation.navigate("MainScreenWriting", { passanswers : answers});
+    navigation.navigate("MainScreenWriting", { passanswers : answers , category : category});
   };
 
   return (
@@ -54,9 +56,9 @@ export default function VoiceMainPage({ navigation, route }) {
             <Text style={styles.mainQuestion}>
               {item.questionList[0].mainquestion}
             </Text>
-            <Text style={styles.mainQuestion}>
+            {/* <Text style={styles.mainQuestion}>
               {item.questionList[0].answers}
-            </Text>
+            </Text> */}
 
             <VoiceVideoScreen videoUrl={item.video} />
 

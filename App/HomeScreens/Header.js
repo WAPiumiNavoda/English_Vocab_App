@@ -50,7 +50,7 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   mainHeader:{
-    color:Colors.white , 
+    color:Colors.white, 
     fontSize: 20, 
     fontFamily: 'outfit'
   },

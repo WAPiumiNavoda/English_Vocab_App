@@ -4,11 +4,13 @@ import { db } from '../Services/config';
 import Colors from '../Shared/Colors';
 import { useAuth } from '../../Auth/AuthProvider';
 
-export default function LeaderBoard() {
+export default function LeaderBoard( {  } ) {
   const [wrongAnswers, setWrongAnswers] = useState([]);
   const [correctAnswer,  setWrongWritingAnswers] = useState([]);
   const { userId } = useAuth();
   console.log("Dashboard log user: " +  userId);
+
+  const level = "Basic";
 
   useEffect(() => {
     const fetchWrongAnswers = async () => {
