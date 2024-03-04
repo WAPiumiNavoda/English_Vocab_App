@@ -16,8 +16,6 @@ export default function VoiceMainPage({ navigation, route }) {
   const [score, setScore] = useState(0);
   const [showResult, setshowResult] = useState(false);
   
-  
-
   const { category } = route.params;
 
 

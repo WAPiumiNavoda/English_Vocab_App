@@ -13,7 +13,7 @@ export default function LeaderBoard() {
   useEffect(() => {
     const fetchWrongAnswers = async () => {
       try {
-        const wrongAnswersSnapshot = await db.collection('voicewrrong').doc(userId).get();
+        const wrongAnswersSnapshot = await db.collection('voicewrong').doc(userId).get();
         const userData = wrongAnswersSnapshot.data();
         if (userData) {
           setWrongAnswers(userData.wrongAnswers || []);

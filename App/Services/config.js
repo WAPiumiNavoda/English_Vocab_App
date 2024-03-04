@@ -57,18 +57,19 @@ const handleAuthentication = async () => {
 
 export const saveWrongAnswersToFirebase = async (wrongAnswers, userId) => {
   try {
-    const userWrongAnswersRef = firebase.firestore().collection('voicewrrong').doc(userId);
+    const userWrongAnswersRef = firebase.firestore().collection('voicewrong').doc(userId);
 
-    await userWrongAnswersRef.add({
+    await userWrongAnswersRef.set({
       wrongAnswers: wrongAnswers,
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     });
 
-    console.log("Wrong answers added successfully!");
+    console.log("Wrong answers saved successfully!");
   } catch (error) {
     console.error('Error saving wrong answers to Firestore:', error);
   }
 };
+
 
 
 export { firebase , db , firebaseConfig};
